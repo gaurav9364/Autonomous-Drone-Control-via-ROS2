@@ -33,9 +33,9 @@ Microsoft AirSim (instructions available on the official AirSim GitHub)
 
 1. Create a new ROS2 workspace:
 
-bash
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws
+`bash`
+`mkdir -p ~/ros2_ws/src`
+`cd ~/ros2_ws`
 
 2. Install ROS2 if not already installed:
 Follow the official ROS2 installation guide.
