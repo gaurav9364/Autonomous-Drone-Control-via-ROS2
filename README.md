@@ -39,31 +39,29 @@ mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws
 ```
 
-`bash`
-`mkdir -p ~/ros2_ws/src`
-`cd ~/ros2_ws`
-
 2. Install ROS2 if not already installed:
 Follow the official ROS2 installation guide.
 
 3. Initialize the workspace and environment:
 
+```
 bash
 source /opt/ros/humble/setup.bash
+```
 
 4. Create the ROS2 package for AirSim bridge:
-
+```
 bash
 cd ~/ros2_ws/src
 ros2 pkg create --build-type ament_python airsim_ros2_bridge --dependencies rclpy geometry_msgs std_msgs
-
+```
 5. Build the package:
-
+```
 bash
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
-
+```
 6. Implement the node (example):
 In airsim_ros2_bridge/drone_control.py, implement ROS2 publishers and subscribers to communicate with the AirSim Python API as described in the [documentation].
 
@@ -79,16 +77,17 @@ In airsim_ros2_bridge/drone_control.py, implement ROS2 publishers and subscriber
 1. Start AirSim in the desired simulation environment.
 
 2. Source the ROS2 workspace:
-
+```
 bash
 source ~/ros2_ws/install/setup.bash
-
+```
 Run the custom AirSim-ROS2 bridge node:
 
 Example:
-
+```
 bash
 ros2 run airsim_ros2_bridge drone_control
+```
 Use ROS2 commands or other nodes to publish waypoints to the topic(s) that control drone movement. The node relays these commands to the virtual drone in AirSim, which updates the flight path in real time.
 
 # Customization
